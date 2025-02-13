@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "316097797274",
+    "project_id": "teechat-84d14",
+    "storage_bucket": "teechat-84d14.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:316097797274:android:7311c508291b874ddb5323",
+        "android_client_info": {
+          "package_name": "com.example.teechat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDr4NYFirVlPD0VtB9Q_uNRl9zbZVj5EcE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
