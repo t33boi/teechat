@@ -23,8 +23,8 @@ class _LoginPageState extends State<LoginPage> {
    try
    {
      authService.signInWIthEmailandPassword(
-      emailController.text,
-      passwordController.text,
+      emailController.text.trim(),
+      passwordController.text.trim(),
     );
    }
    catch(e)

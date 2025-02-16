@@ -111,7 +111,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                     GestureDetector(
                         onTap: widget.onTap,
-                        child: Text(
+                        child: const Text(
                           "Login Now",
                           style: TextStyle(
                               color: Colors.blue, fontWeight: FontWeight.bold),
