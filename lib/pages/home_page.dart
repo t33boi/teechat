@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:teechat/constants/color.dart';
 import 'package:teechat/pages/chat_page.dart';
 import 'package:teechat/services/auth/auth_service.dart';
 
@@ -25,7 +26,16 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Home Page"),
+        
+        title: SizedBox(
+          child: const Text(
+            "CHAT",
+            style: TextStyle(
+              color: AppColors.textLight,
+            ),
+          ),
+        ),
+        backgroundColor: AppColors.primaryBlue,
         actions: [
           IconButton(
             onPressed: signOut,
@@ -62,24 +72,34 @@ class _HomePageState extends State<HomePage> {
     if (_auth.currentUser!.email != data['email']) {
       print('loading');
       return ListTile(
-        
-        title: Text(data['email']),
-        onTap: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => ChatPage(
+          title: Container(
+            decoration: const BoxDecoration(
+              border: Border(
+                bottom: BorderSide(
+                  color: AppColors.textDark,
+                ),
+              ),
+            ),
+            padding: const EdgeInsets.all(10),
+            child: Text(
+              data['email'],
+              style: const TextStyle(
+                fontSize: 20,
+              ),
+            ),
+          ),
+          onTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ChatPage(
                     recieverUserEmail: data['email'],
                     recieverUserId: data['uid'],
-                ),
-              ));
-        }
-      );
-      
-    }
-    else{
+                  ),
+                ));
+          });
+    } else {
       return Container();
     }
-   
   }
 }

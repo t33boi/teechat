@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:teechat/constants/color.dart';
 
 class MyTextField extends StatelessWidget {
-
   final TextEditingController controller;
   final String hintText;
   final bool obscureText;
-                 
-  const MyTextField({super.key, required this.controller, required this.hintText, required this.obscureText});
+
+  const MyTextField(
+      {super.key,
+      required this.controller,
+      required this.hintText,
+      required this.obscureText});
 
   @override
   Widget build(BuildContext context) {
@@ -15,17 +19,16 @@ class MyTextField extends StatelessWidget {
       obscureText: obscureText,
       decoration: InputDecoration(
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.grey.shade200),
+          borderSide: BorderSide(color: AppColors.backgroundLight),
         ),
         focusedBorder: const OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.white),
+          borderSide: BorderSide(color: AppColors.primaryBlue),
         ),
         fillColor: Colors.grey[100],
         filled: true,
         hintText: hintText,
         hintStyle: const TextStyle(color: Colors.grey),
       ),
-
-      );
+    );
   }
 }
