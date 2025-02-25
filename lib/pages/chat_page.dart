@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:teechat/components/chat_bubble.dart';
 import 'package:teechat/components/my_text_field.dart';
+import 'package:teechat/constants/color.dart';
 import 'package:teechat/services/chat/chat_service.dart';
 
 class ChatPage extends StatefulWidget {
@@ -93,7 +94,12 @@ class _ChatPageState extends State<ChatPage> {
             SizedBox(
               height: 5,
             ),
-            ChatBubble(message: data['message'])
+            ChatBubble(
+              message: data['message'],
+              color: data['senderId'] == _firebaseAuth.currentUser!.uid
+                  ? AppColors.sentMessage
+                  : AppColors.receivedMessage,
+            ),
           ],
         ),
       ),

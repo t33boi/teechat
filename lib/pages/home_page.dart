@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         
-        title: SizedBox(
+        title: const SizedBox(
           child: const Text(
             "CHAT",
             style: TextStyle(
@@ -40,10 +40,14 @@ class _HomePageState extends State<HomePage> {
           IconButton(
             onPressed: signOut,
             icon: const Icon(Icons.logout),
+            color: AppColors.backgroundLight,
           ),
         ],
       ),
-      body: _buildUserList(),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: _buildUserList(),
+      ),
     );
   }
 
@@ -73,14 +77,12 @@ class _HomePageState extends State<HomePage> {
       print('loading');
       return ListTile(
           title: Container(
-            decoration: const BoxDecoration(
-              border: Border(
-                bottom: BorderSide(
-                  color: AppColors.textDark,
-                ),
-              ),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+               color: AppColors.accentBlue,
             ),
-            padding: const EdgeInsets.all(10),
+           
+            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
             child: Text(
               data['email'],
               style: const TextStyle(

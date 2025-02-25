@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class AppColors {
   static const Color primaryBlue = Color(0xFF0000FF);
   static const Color secondaryBlue = Color(0xFF6666FF);
+  static const Color accentBlue = Color(0xFFE9E9FD);
   
   static const Color sentMessage = Color(0xFF3333FF);
   static const Color receivedMessage = Color(0xFFCCCCFF);
